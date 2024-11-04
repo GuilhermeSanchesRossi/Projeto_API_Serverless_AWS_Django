@@ -1,0 +1,79 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "API para projeto T1 da disciplina ECM967 - Tópicos Avançados em Back-End, cujo objetivo é agir como um assistente de estudos, recebendo um input queenvolve determinado assunto que o usuário queira estudar, e retornando recomendações de estudo personalizadas",
+    "version" : "2024-11-04T00:41:13Z",
+    "title" : "Projeto-ECM967-API-Estudos"
+  },
+  "host" : "d3205aw3p6.execute-api.us-east-1.amazonaws.com",
+  "basePath" : "/prod",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/chat" : {
+      "post" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "requisicaoPadrao",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/requisicaoPadrao"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            }
+          }
+        }
+      },
+      "options" : {
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "200 response",
+            "schema" : {
+              "$ref" : "#/definitions/Empty"
+            },
+            "headers" : {
+              "Access-Control-Allow-Origin" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Methods" : {
+                "type" : "string"
+              },
+              "Access-Control-Allow-Headers" : {
+                "type" : "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Empty" : {
+      "type" : "object",
+      "title" : "Empty Schema"
+    },
+    "requisicaoPadrao" : {
+      "type" : "object",
+      "required" : [ "assunto", "nivel", "nome" ],
+      "properties" : {
+        "assunto" : {
+          "type" : "string"
+        },
+        "nivel" : {
+          "type" : "string"
+        },
+        "nome" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}
