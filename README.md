@@ -4,3 +4,6 @@ Repositório destinado à hospedar duas versões de um projeto Back-End: um feit
 ## Integrantes
 - Guilherme Sanches Rossi 19.02404-5
 - Fernando Henriques Neto 18.00931-0
+
+##Vídeo do funcionamento:
+https://youtu.be/0Av9eWT54Uc
